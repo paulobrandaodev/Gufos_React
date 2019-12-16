@@ -36,7 +36,7 @@ class Categorias extends Component {
         event.preventDefault();
         console.log("Cadastrando");
 
-        fetch("http://localhost:5000/api/categoria", {
+        fetch("http://paulobrandao-001-site1.etempurl.com/api/categoria", {
            method : "POST",
            body: JSON.stringify({ titulo : this.state.nome }),
            headers : { 
@@ -55,7 +55,7 @@ class Categorias extends Component {
 
         this.setState({ loading : true});
 
-        fetch("http://localhost:5000/api/categoria")
+        fetch("http://paulobrandao-001-site1.etempurl.com/api/categoria")
             .then(response => response.json())
             .then(data => {
                 this.setState( {lista: data } )
@@ -86,7 +86,7 @@ class Categorias extends Component {
         event.preventDefault();
         console.log(this.state.editarModal);
 
-        fetch("http://localhost:5000/api/categoria/"+this.state.editarModal.categoriaId, {
+        fetch("http://paulobrandao-001-site1.etempurl.com/api/categoria/"+this.state.editarModal.categoriaId, {
            method : "PUT",
            body: JSON.stringify(this.state.editarModal),
            headers : { 
@@ -111,7 +111,7 @@ class Categorias extends Component {
         
         console.log("Excluindo");
         
-        fetch("http://localhost:5000/api/categoria/"+id, {
+        fetch("http://paulobrandao-001-site1.etempurl.com/api/categoria/"+id, {
            method : "DELETE",
            headers : { 
                "Content-Type" : "application/json"
